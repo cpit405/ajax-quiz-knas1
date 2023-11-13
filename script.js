@@ -15,9 +15,13 @@ getReposButton.addEventListener("click", async () => {
 
   reposList.innerHTML = "";
 
-  data.forEach((repo) => {
-    const li = document.createElement("li");
-    li.innerText = repo.name;
+  data.forEach(repo => {
+    const li = document.createElement('li');
+    const link = document.createElement('a');
+    link.href = repo.html_url; 
+    link.textContent = repo.name;
+    li.appendChild(link);
     reposList.appendChild(li);
-  });
+});
+
 });
